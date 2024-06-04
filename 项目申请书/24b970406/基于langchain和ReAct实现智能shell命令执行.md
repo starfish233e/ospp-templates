@@ -9,6 +9,7 @@
 <br>
 
 ---
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -62,7 +63,7 @@
 根据操作系统不同，同一操作具有不同的 `shell`命令形式，如类Unix系统中的 `which`和Windows系统中的 `where`，一个简短的对照可以参见[ powershell 和 bash 对照表](https://www.pstips.net/bash-and-powershell-quick-reference.html)
 
 就算是同一操作系统环境(如 Windows )，也有 `cmd`和 `powershell`两个命令行工具，分别有不同的shell命令，因此首先需要询问用户使用的操作系统环境和命令行工具
- 
+
 目前LangChain的官网只给出了类 Unix 系统的shell命令工具，Windows 系统的 shell 自动化工具仍需开发
 
 ### 2.支持中文输入
@@ -71,9 +72,9 @@
 
 ### 3.强制人工确认
 
-大模型生成具有一定的不可控性，如果生成如`Remove-Item -Recurese -Force`或者`rm -rf`这样的破坏性命令，可能对用户系统造成巨大损失。为了避免工具执行的风险，可以调用 [HumanApprovalCallbackhandler](https://api.python.langchain.com/en/latest/callbacks/langchain_community.callbacks.human.HumanApprovalCallbackHandler.html)等回调工具进行人工确认
+大模型生成具有一定的不可控性，如果生成如 `Remove-Item -Recurese -Force`或者 `rm -rf`这样的破坏性命令，可能对用户系统造成巨大损失。为了避免工具执行的风险，可以调用 [HumanApprovalCallbackhandler](https://api.python.langchain.com/en/latest/callbacks/langchain_community.callbacks.human.HumanApprovalCallbackHandler.html)等回调工具进行人工确认
 
-考虑到部分应用程序需要管理员/root权限，可以在询问时加上授权选项，如`以管理员权限运行`等
+考虑到部分应用程序需要管理员/root权限，可以在询问时加上授权选项，如 `以管理员权限运行`等
 
 ## 3. 技术方法及可行性
 
@@ -131,4 +132,4 @@ print(completion.choices[0].message.content)
 
 ### 2.项目开发第二阶段（8.15 - 9.30）
 
-- [ ] 编写项目测试，仓库 pr 
+- [ ] 编写项目测试，仓库 pr
