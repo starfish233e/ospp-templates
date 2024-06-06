@@ -1,0 +1,252 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\section{开源之夏-项目申请书}\label{ux5f00ux6e90ux4e4bux590f-ux9879ux76eeux7533ux8bf7ux4e66}
+
+\subsection{项目名称：基于sysSentry框架支持常见硬件的故障巡检能力}\label{ux9879ux76eeux540dux79f0ux57faux4e8esyssentryux6846ux67b6ux652fux6301ux5e38ux89c1ux786cux4ef6ux7684ux6545ux969cux5de1ux68c0ux80fdux529b}
+
+\textbf{项目编号：24b970341}
+
+\paragraph{\texorpdfstring{项目导师邮箱：\href{mailto:zhangnan134@huawei.com}{\nolinkurl{zhangnan134@huawei.com}}
+}{项目导师邮箱：zhangnan134@huawei.com }}\label{ux9879ux76eeux5bfcux5e08ux90aeux7bb1zhangnan134huaweicom}
+
+\subsection{\texorpdfstring{申请人:
+}{申请人: }}\label{ux7533ux8bf7ux4eba}
+
+\paragraph{\texorpdfstring{个人邮件：\href{mailto:2789954149@qq.com}{\nolinkurl{2789954149@qq.com}}}{个人邮件：2789954149@qq.com}}\label{ux4e2aux4ebaux90aeux4ef62789954149qqcom}
+
+\paragraph{\texorpdfstring{个人主页：\url{https://gitee.com/xu-zihanhan}}{个人主页：https://gitee.com/xu-zihanhan}}\label{ux4e2aux4ebaux4e3bux9875httpsgiteecomxu-zihanhan}
+
+\#\#\#
+
+\subsection{基于sysSentry框架支持常见硬件的故障巡检能力}\label{ux57faux4e8esyssentryux6846ux67b6ux652fux6301ux5e38ux89c1ux786cux4ef6ux7684ux6545ux969cux5de1ux68c0ux80fdux529b}
+
+\subsubsection{项目背景}\label{ux9879ux76eeux80ccux666f}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{实时监控需求}：sysSentry是一个统一故障巡检框架，支持针对OS内的各类硬件进行故障压测和巡检，并提供统一的结果以及告警通知能力。运维平台可以通过调用sysSentry提供的统一接口进行OS上的统一巡检，提前发现故障并进行处理，提升系统可靠性。随着IT基础设施的日益复杂，对硬件设备的实时监控和故障预警成为关键需求。
+\item
+  \textbf{Sentry框架优势}：当前在sysSentry中已经支持CPU、内存、NPU等硬件的巡检，该项目主要是要在sysSentry中支持新的硬件巡检能力，通过提供插件的方式，支持DPU、FC、GPU、IB、NIC、RAID、SSD、密码卡等，支持的硬件类型以及型号参考兼容性列表：{[}\url{https://www.openeuler.org/zh/compatibility}
+  作为成熟的错误监控和上报平台，支持多语言、多平台，并已经在大量组织中成功应用，提供了丰富的API支持和社区支持。
+\item
+  \textbf{故障巡检目标}：对于各类硬件的巡检能力，可以主要可以借助BMC以及各类硬件提供的巡检工具进行插件功能的开发。集成sysSentry框架，本项目将实现对硬件设备的实时故障巡检，及时发现并预警潜在问题，提高系统的稳定性和可靠性。
+\end{enumerate}
+
+\subsubsection{项目目标}\label{ux9879ux76eeux76eeux6807}
+
+\textbf{1、按照sysSentry框架对接规范开发对应的插件；}\\
+\textbf{2、需要提出对应的测试用例；}\\
+\textbf{3、通过仓库的门禁检查；（做好测试，安全性分析）}
+
+\subsubsection{技术要求}\label{ux6280ux672fux8981ux6c42}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  悉Python语言开发
+\item
+  对于Linux下常见的硬件故障有一定的了解或者一定的学习能力
+\end{enumerate}
+
+\subsubsection{技术栈对应}\label{ux6280ux672fux6808ux5bf9ux5e94}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  本人熟悉 sysSentry 框架，对嵌入式 Linux 工控系统有一定了解。
+\item
+  容器相关知识 Docker 部署过 本地环境，了解前端 Figma 设计
+\item
+  操作系统知识 了解 openEuler 操作系统，贡献过博客阅读量：22074
+
+  参与博客、项目小组平台 new\_energy\_coder\_club 开源经历贡献
+\item
+  编程语言标签：Python、Shell
+
+  \subsubsection{- 项目经历}\label{--ux9879ux76eeux7ecfux5386}
+
+  ARH502-CN 边缘计算网关 部署-容器应用 MyBatis/ModelArts 模型
+
+  2024 全国大学生物联网设计竞赛（华为杯 IOT）高校赛道-工控赛道选手
+
+  \subsubsection{- 知识储备}\label{--ux77e5ux8bc6ux50a8ux5907}
+
+  了解 Yocto 框架与嵌入式 Linux 系统【最近在学习编译】，有 Redis 经验
+
+  会使用 soildworks（工控硬件设备设计, 硬件光通讯系统设计经验）
+\end{enumerate}
+
+\subsubsection{项目安排}\label{ux9879ux76eeux5b89ux6392}
+
+\paragraph{第一阶段：环境部署，硬件兼容（7月1日至7月15日）}\label{ux7b2cux4e00ux9636ux6bb5ux73afux5883ux90e8ux7f72ux786cux4ef6ux517cux5bb97ux67081ux65e5ux81f37ux670815ux65e5uxff09}
+
+\textbf{时间安排}：项目启动至第二周结束
+
+\textbf{主要任务}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  下载部署sysSentry的环境
+\item
+  \includegraphics{/Users/imac/Library/Application Support/typora-user-images/image-20240604154621394.png}
+\item
+  在本地运行部署sysSentry
+\end{enumerate}
+
+\paragraph{第二阶段：接入硬件层API，MQTT接入（7月16日至8月5日）}\label{ux7b2cux4e8cux9636ux6bb5ux63a5ux5165ux786cux4ef6ux5c42apimqttux63a5ux51657ux670816ux65e5ux81f38ux67085ux65e5uxff09}
+
+\textbf{时间安排}：第三周至第五周结束
+
+\textbf{主要任务}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  封装硬件API来集成到巡检任务中
+\item
+  \includegraphics{/Users/imac/Library/Application Support/typora-user-images/image-20240604155018063.png}
+\item
+  我们本地有一辆小车，上位机通过MQTT与我们的主机AR502H/CN通讯，我们想要将通讯接口封装成API
+\end{enumerate}
+
+\paragraph{第三阶段：多端架构测试优化与扩展（8月6日至8月15日）}\label{ux7b2cux4e09ux9636ux6bb5ux591aux7aefux67b6ux6784ux6d4bux8bd5ux4f18ux5316ux4e0eux6269ux5c558ux67086ux65e5ux81f38ux670815ux65e5uxff09}
+
+\textbf{时间安排}：第六周至第八周结束
+
+\textbf{主要任务}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  在硬件管理巡检程序中集成sysSentry，通过yocto编译系统镜像运行本地openEuler
+  操作系统。
+\item
+  编写调用API的脚本程序，连接sysSentry，产出DEMO，贡献镜像到openEuler
+  社区。
+\end{enumerate}
+
+\paragraph{第四阶段：文档完善与用户支持（8月16日至9月26日）}\label{ux7b2cux56dbux9636ux6bb5ux6587ux6863ux5b8cux5584ux4e0eux7528ux6237ux652fux63018ux670816ux65e5ux81f39ux670826ux65e5uxff09}
+
+\textbf{时间安排}：第九周至项目结束
+
+\textbf{主要任务}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  撰写详尽的文档，撰写详细的测试报告，包括测试结果、问题修复情况、测试覆盖率等关键信息，为项目导
+  师及社区决策提供依据\textbf{(}按照\textbf{openEuler}
+  社区\textbf{G11}文档标准撰写，同期将测试进度更新在仓
+  库\textbf{readme)}
+\item
+  检查代码质量，通过社区门禁
+\item
+  编写用户手册，详细介绍如何使用\textbf{sysSentry}工具进行单元测试，帮助用户快速上手并充分
+  利用其功能。
+
+  \textbf{3.}在提交\textbf{PR}之前，持续维护更新在社区论坛保持活跃，体验\textbf{sysSentry}工具的功能和用户体
+  验，满足用户需求。
+\end{enumerate}
+
+\paragraph{项目里程碑}\label{ux9879ux76eeux91ccux7a0bux7891}
+
+\begin{itemize}
+\item
+  第一阶段结束：测试框架成功集成到sysSentry工具中，初始测试验证通过。
+\item
+  第二阶段结束：全面单元测试开发完成，测试报告提交。
+\item
+  第三阶段结束：测试框架和脚本优化完成，扩展测试范围实现。
+\item
+  项目结束：Readme文档完善，用户支持流程建立，项目总结报告提交。
+\end{itemize}
+
+\includegraphics{/Users/imac/Library/Application Support/typora-user-images/image-20240604160919460.png}
+
+\subsection{在项目后期，如果有时间将会拉出本项目在多端部署Android\textbackslash iOS\textbackslash Harmony
+OS \textbackslash openEuler 多端操作系统的统一 NT 架构
+APP横向对比，并对openEuler
+进行优化}\label{ux5728ux9879ux76eeux540eux671fux5982ux679cux6709ux65f6ux95f4ux5c06ux4f1aux62c9ux51faux672cux9879ux76eeux5728ux591aux7aefux90e8ux7f72androidiosharmony-os-openeuler-ux591aux7aefux64cdux4f5cux7cfbux7edfux7684ux7edfux4e00-nt-ux67b6ux6784-appux6a2aux5411ux5bf9ux6bd4ux5e76ux5bf9openeuler-ux8fdbux884cux4f18ux5316}
+
+\paragraph{在遇到问题时，将及时向openEuler
+社区论坛和社群反馈，积极寻求帮助和解决问题的方法。}\label{ux5728ux9047ux5230ux95eeux9898ux65f6ux5c06ux53caux65f6ux5411openeuler-ux793eux533aux8bbaux575bux548cux793eux7fa4ux53cdux9988ux79efux6781ux5bfbux6c42ux5e2eux52a9ux548cux89e3ux51b3ux95eeux9898ux7684ux65b9ux6cd5}
+
+\paragraph{\texorpdfstring{仓库链接：\url{https://gitee.com/openeuler/sysSentry}}{仓库链接：https://gitee.com/openeuler/sysSentry}}\label{ux4ed3ux5e93ux94feux63a5httpsgiteecomopeneulersyssentry}
+
+\paragraph{\texorpdfstring{文档地址：\url{https://www.openeuler.org/zh/compatibility/}}{文档地址：https://www.openeuler.org/zh/compatibility/}}\label{ux6587ux6863ux5730ux5740httpswwwopeneulerorgzhcompatibility}
+
+\textbf{GitHub/Gitee ID:}
+
+\textbf{项目编号}
+
+\end{document}
